@@ -10,7 +10,6 @@ describe "Song Forms" do
 
   describe "/songs/new" do
     before do
-      binding.pry
       visit "/songs/new"
     end
 
