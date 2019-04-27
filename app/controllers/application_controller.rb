@@ -71,7 +71,7 @@ class ApplicationController < Sinatra::Base
     if song
       song.save
     end
-    params[:new = true]
+    params[:new] = true
 
     redirect :"/songs/#{song.slug}"
   end
