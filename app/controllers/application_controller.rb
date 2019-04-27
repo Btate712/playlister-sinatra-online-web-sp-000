@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
 
   get '/songs/new' do
     @genres = Genre.all
+    binding.pry
 
     erb :'songs/new'
   end
