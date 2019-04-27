@@ -70,7 +70,7 @@ class ApplicationController < Sinatra::Base
     if song
       song.save
     end
-    
+
     redirect :"/songs/#{song.slug}"
   end
 end
