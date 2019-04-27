@@ -7,7 +7,7 @@ describe "Song Forms" do
   let(:song_name) { "That One with the Guitar" }
   let!(:genre_1) { Genre.create(name: genre_1_name) }
   let!(:genre_2) { Genre.create(name: genre_2_name) }
-  binding.pry
+
   describe "/songs/new" do
     before do
       visit "/songs/new"
@@ -17,6 +17,7 @@ describe "Song Forms" do
       it "creates a new artist on submit" do
         expect {
           fill_in "Name", with: song_name
+          binding.pry
           check "New Age Garbage"
           fill_in "Artist Name", with: artist_name
           click_on "Create"
