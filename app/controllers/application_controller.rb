@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     else
       @song = Song.find_by_slug(params[:id])
     end
-    
+
     if @song == Song.all.last
       @new_song_message = true
     end
@@ -56,7 +56,7 @@ class ApplicationController < Sinatra::Base
       song.save
     end
 
-    redirect :"/songs/#{song.id}"
+    redirect :"/songs/#{song.slug}"
   end
 
   post '/songs' do
