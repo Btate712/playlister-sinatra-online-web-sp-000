@@ -2,6 +2,7 @@ class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   set :session_secret, "my_application_secret"
   set :views, Proc.new { File.join(root, "../views/") }
+  last_edit = nil
 
   get '/' do
     erb :index
@@ -30,6 +31,10 @@ class ApplicationController < Sinatra::Base
       @new_song_message = true
     end
 
+    if @song == last_edit
+      @changed_song_message = true
+    end
+    
     erb :'songs/show'
   end
 
@@ -55,6 +60,8 @@ class ApplicationController < Sinatra::Base
     if song
       song.save
     end
+
+    last_edit = song
 
     redirect :"/songs/#{song.slug}"
   end
