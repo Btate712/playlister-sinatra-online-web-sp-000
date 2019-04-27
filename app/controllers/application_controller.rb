@@ -56,6 +56,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/songs' do
+    binding.pry
     song = Song.new
     song.name = params[:song][:name]
     params[:song][:genre_ids].each do |genre_id|
