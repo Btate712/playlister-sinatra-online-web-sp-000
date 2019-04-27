@@ -25,6 +25,7 @@ class ApplicationController < Sinatra::Base
     else
       @song = Song.find_by_slug(params[:id])
     end
+    binding.pry
 
     erb :'songs/show'
   end
