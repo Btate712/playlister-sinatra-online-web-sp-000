@@ -70,8 +70,7 @@ class ApplicationController < Sinatra::Base
     if song
       song.save
     end
-    binding.pry
-
+    
     redirect :"/songs/#{song.id}"
   end
 end
