@@ -4,7 +4,7 @@
   <title> <%= @song.name %> - Edit </title>
 </head>
 <body>
-<form action="/songs/<%= @song.slug %>" method="POST" >
+<form action="/songs/<%= @song.id %>" method="POST" >
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 <p>
 <label for="song[name]">Song Name:</label>
