@@ -29,6 +29,7 @@ class ApplicationController < Sinatra::Base
     if @song == Song.all.last
       @new_song_message = true
     end
+    
     erb :'songs/show'
   end
 
