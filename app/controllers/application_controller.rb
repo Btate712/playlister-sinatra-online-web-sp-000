@@ -71,6 +71,6 @@ class ApplicationController < Sinatra::Base
       song.save
     end
     
-    redirect :"/songs/#{song.id}"
+    redirect :"/songs/#{song.slug}"
   end
 end
