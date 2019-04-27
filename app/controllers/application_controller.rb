@@ -25,7 +25,6 @@ class ApplicationController < Sinatra::Base
     else
       @song = Song.find_by_slug(params[:id])
     end
-    binding.pry
 
     erb :'songs/show'
   end
@@ -71,7 +70,6 @@ class ApplicationController < Sinatra::Base
     if song
       song.save
     end
-    params[:new] = true
 
     redirect :"/songs/#{song.slug}"
   end
