@@ -62,9 +62,9 @@ class ApplicationController < Sinatra::Base
     params[:song][:genre_ids].each do |genre_id|
       song.genres << Genre.find(genre_id)
     end
-    artist = Artist.find { |a| a.name == params[:song][:artist][:name] }
+    artist = Artist.find { |a| a.name == params[:artist_name] }
     if !artist
-      artist = Artist.new(:name => params[:song][:artist][:name])
+      artist = Artist.new(:name => params[:artist_name])
       artist.save
     end
     song.artist_id = artist.id
